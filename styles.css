@@ -1,0 +1,190 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Obsidian black background */
+    text-align: center;
+    background-image: url('images/background.JPG'); /* Set your background image path */
+    background-size: cover;
+    background-attachment: fixed; /* Fixed background */
+    animation: backgroundAnimation 10s ease infinite; /* Animation for background */
+}
+
+/* Background Animation */
+@keyframes backgroundAnimation {
+    0% {
+        background-color: #121212; /* Obsidian black */
+    }
+    50% {
+        background-color: #1a1a1a; /* Slightly lighter black */
+    }
+    100% {
+        background-color: #121212; /* Obsidian black */
+    }
+}
+
+header {
+    background-color: transparent; /* Changed to transparent */
+    padding: 20px;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.nav-menu li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s; /* Smooth color transition */
+    position: relative; /* For underline effect */
+}
+
+.nav-menu a:hover {
+    color: #00bfff; /* Bright blue on hover */
+}
+
+/* Underline effect for the active section */
+.nav-menu .active {
+    color: #00bfff; /* Active section color */
+}
+
+.nav-menu .active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #00bfff;
+    bottom: -5px;
+    left: 0;
+}
+
+/* Movie Search Form */
+#movieForm {
+    margin: 20px auto;
+}
+
+label {
+    font-weight: bold;
+    text-align: right;
+    color: white; /* Change label color to white for visibility */
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc; /* Add border for visibility */
+    border-radius: 5px; /* Rounded corners for input */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #121212; /* Obsidian black */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #1c1c1c; /* Slightly lighter black on hover */
+}
+
+#movieDetails, #favoritesDetails, #watchedDetails, #wasteOfTimeDetails {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Reduced min width for smaller boxes */
+    gap: 27px; /* Adjusted gap between movie boxes */
+    padding: 20px;
+    margin: 20px;
+}
+
+.movie {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Changed to semi-transparent black */
+    max-width: 180px; /* Set max width to ensure consistent size */
+    margin: 0 auto; /* Center the movie box */
+    border-radius: 10px; /* Added rounded edges */
+    color: white; /* Set text color inside the movie box to white */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for scale and shadow */
+    position: relative; /* Position for overlay effect */
+    overflow: hidden; /* Hide overflow for overlay */
+}
+
+.movie:hover {
+    transform: scale(1.05); /* Scale up on hover */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2); /* Add shadow on hover */
+}
+
+/* Overlay effect on movie posters */
+.movie img {
+    width: 100%;
+    height: auto;
+}
+
+.movie .overlay {
+    position: absolute; /* Position overlay */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s; /* Smooth transition */
+}
+
+.movie:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* Adjust emoji button styles for all sections */
+.favoriteBtn, .eyeBtn, .dislikeBtn, .removeBtn {
+    margin: 5px;
+    cursor: pointer;
+    padding: 10px; /* Increased padding for larger touch area */
+    background: transparent; /* Make button background transparent */
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+}
+
+/* Specific styling for the remove button */
+.removeBtn {
+    /* No additional styles needed; inherits from previous styles */
+}
+
+/* Pop-up message styles */
+#popupMessage {
+    display: none; /* Hidden by default */
+    position: fixed; /* Position it fixed */
+    top: 20px; /* Distance from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for center alignment */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    z-index: 1000; /* Ensure it appears above other elements */
+    transition: opacity 0.5s; /* Smooth transition for visibility */
+    opacity: 0; /* Start as invisible */
+}
+
+/* For sections when no movies are available */
+.no-movies-message {
+    color: white !important; /* Force the text to be white */
+    font-size: 1.2em;
+    padding: 20px;
+    text-align: center;
+}

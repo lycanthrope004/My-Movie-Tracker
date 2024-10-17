@@ -1,0 +1,33 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Caligrafica&display=swap');
+
+/* Apply fonts to body */
+body {
+    font-family: 'Roboto', sans-serif; /* Main body font */
+}
+
+/* Styles for the header */
+header h1 {
+    font-family: 'Caligrafica', cursive; /* Font for the header */
+    font-size: 2rem; /* Medium size for the heading */
+    text-align: center; /* Centering the heading */
+    margin: 20px 0; /* Margin for spacing */
+}
+
+/* Additional typography styles can go here */
+/* For example, styling for paragraphs, links, etc. */
+nav a {
+    font-family: 'Roboto', sans-serif; /* Same body font for navigation links */
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Link color */
+}
+
+nav a:hover {
+    color: #007BFF; /* Color change on hover */
+}
+
+/* Adjusting label styles for better visibility */
+label {
+    font-family: 'Roboto', sans-serif; /* Same body font */
+    font-weight: bold; /* Bold labels */
+}

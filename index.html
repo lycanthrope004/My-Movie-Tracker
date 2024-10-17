@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fonts.css"> <!-- Link to fonts.css -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Allura&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+</head>
+<body>
+    <!-- Overlay for visual effect -->
+    <div id="overlay"></div>
+
+    <!-- Header Section -->
+    <header>
+        <h1>My Movie Tracker</h1>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
+            <li><a href="watched.html">Watched</a></li>
+            <li><a href="wasteoftime.html">Waste of Time</a></li>
+        </ul>
+    </header>
+
+    <!-- Movie Search Form -->
+    <form id="movieForm">
+        <label for="movieName" id="movieNameLabel">Enter Movie Name:</label>
+        <input type="text" id="movieName" placeholder="e.g., Inception" required>
+        <button type="submit">Fetch Movies</button>
+    </form>
+
+    <!-- Pop-up Message -->
+    <div id="popupMessage" class="popup-message" style="display:none;"></div>
+
+    <!-- Movie List Display -->
+    <div id="movieDetails"></div>
+
+    <!-- No Movies Message (if applicable) -->
+    <div class="no-movies-message" style="display:none;">No movies found in this section.</div> <!-- Add this line -->
+
+    <!-- JavaScript Files -->
+    <script src="fetchingdetails.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
